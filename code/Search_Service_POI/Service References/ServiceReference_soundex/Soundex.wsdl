@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Thai_soundex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Thai_soundexResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Thai_soundexResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Thai_soundexSoapIn">
+    <wsdl:part name="parameters" element="tns:Thai_soundex" />
+  </wsdl:message>
+  <wsdl:message name="Thai_soundexSoapOut">
+    <wsdl:part name="parameters" element="tns:Thai_soundexResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SoundexSoap">
+    <wsdl:operation name="Thai_soundex">
+      <wsdl:input message="tns:Thai_soundexSoapIn" />
+      <wsdl:output message="tns:Thai_soundexSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoundexSoap" type="tns:SoundexSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Thai_soundex">
+      <soap:operation soapAction="http://tempuri.org/Thai_soundex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SoundexSoap12" type="tns:SoundexSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Thai_soundex">
+      <soap12:operation soapAction="http://tempuri.org/Thai_soundex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Soundex">
+    <wsdl:port name="SoundexSoap" binding="tns:SoundexSoap">
+      <soap:address location="http://localhost/phogen/Soundex.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SoundexSoap12" binding="tns:SoundexSoap12">
+      <soap12:address location="http://localhost/phogen/Soundex.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SnapAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SnapAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SnapAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SnapPublicArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SnapPublicAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SnapPublicAreaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SnapHydro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SnapHydroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SnapHydroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_SnapLtrans_KM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="radius" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_SnapLtrans_KMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_SnapLtrans_KMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_SnapLtrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="radius" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_SnapLtransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_SnapLtransResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoadSnapping">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoadSnappingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoadSnappingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoadSnapping_R">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Radius" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoadSnapping_RResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoadSnapping_RResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SnapAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:SnapAdmin" />
+  </wsdl:message>
+  <wsdl:message name="SnapAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:SnapAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:SnapPublicArea" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:SnapPublicAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroSoapIn">
+    <wsdl:part name="parameters" element="tns:SnapHydro" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroSoapOut">
+    <wsdl:part name="parameters" element="tns:SnapHydroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_SnapLtrans_KM" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_SnapLtrans_KMResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_SnapLtrans" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_SnapLtransResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingSoapIn">
+    <wsdl:part name="parameters" element="tns:RoadSnapping" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingSoapOut">
+    <wsdl:part name="parameters" element="tns:RoadSnappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RSoapIn">
+    <wsdl:part name="parameters" element="tns:RoadSnapping_R" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RSoapOut">
+    <wsdl:part name="parameters" element="tns:RoadSnapping_RResponse" />
+  </wsdl:message>
+  <wsdl:message name="SnapAdminHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapAdminHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingHttpGetIn">
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="Info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RHttpGetIn">
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="Radius" type="s:string" />
+    <wsdl:part name="Info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SnapAdminHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapAdminHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapPublicAreaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SnapHydroHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtrans_KMHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_SnapLtransHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingHttpPostIn">
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="Info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnappingHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RHttpPostIn">
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="Radius" type="s:string" />
+    <wsdl:part name="Info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RoadSnapping_RHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="identSoap">
+    <wsdl:operation name="SnapAdmin">
+      <wsdl:input message="tns:SnapAdminSoapIn" />
+      <wsdl:output message="tns:SnapAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <wsdl:input message="tns:SnapPublicAreaSoapIn" />
+      <wsdl:output message="tns:SnapPublicAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <wsdl:input message="tns:SnapHydroSoapIn" />
+      <wsdl:output message="tns:SnapHydroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <wsdl:input message="tns:Search_SnapLtrans_KMSoapIn" />
+      <wsdl:output message="tns:Search_SnapLtrans_KMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <wsdl:input message="tns:Search_SnapLtransSoapIn" />
+      <wsdl:output message="tns:Search_SnapLtransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <wsdl:input message="tns:RoadSnappingSoapIn" />
+      <wsdl:output message="tns:RoadSnappingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <wsdl:input message="tns:RoadSnapping_RSoapIn" />
+      <wsdl:output message="tns:RoadSnapping_RSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="identHttpGet">
+    <wsdl:operation name="SnapAdmin">
+      <wsdl:input message="tns:SnapAdminHttpGetIn" />
+      <wsdl:output message="tns:SnapAdminHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <wsdl:input message="tns:SnapPublicAreaHttpGetIn" />
+      <wsdl:output message="tns:SnapPublicAreaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <wsdl:input message="tns:SnapHydroHttpGetIn" />
+      <wsdl:output message="tns:SnapHydroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <wsdl:input message="tns:Search_SnapLtrans_KMHttpGetIn" />
+      <wsdl:output message="tns:Search_SnapLtrans_KMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <wsdl:input message="tns:Search_SnapLtransHttpGetIn" />
+      <wsdl:output message="tns:Search_SnapLtransHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <wsdl:input message="tns:RoadSnappingHttpGetIn" />
+      <wsdl:output message="tns:RoadSnappingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <wsdl:input message="tns:RoadSnapping_RHttpGetIn" />
+      <wsdl:output message="tns:RoadSnapping_RHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="identHttpPost">
+    <wsdl:operation name="SnapAdmin">
+      <wsdl:input message="tns:SnapAdminHttpPostIn" />
+      <wsdl:output message="tns:SnapAdminHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <wsdl:input message="tns:SnapPublicAreaHttpPostIn" />
+      <wsdl:output message="tns:SnapPublicAreaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <wsdl:input message="tns:SnapHydroHttpPostIn" />
+      <wsdl:output message="tns:SnapHydroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <wsdl:input message="tns:Search_SnapLtrans_KMHttpPostIn" />
+      <wsdl:output message="tns:Search_SnapLtrans_KMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <wsdl:input message="tns:Search_SnapLtransHttpPostIn" />
+      <wsdl:output message="tns:Search_SnapLtransHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <wsdl:input message="tns:RoadSnappingHttpPostIn" />
+      <wsdl:output message="tns:RoadSnappingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <wsdl:input message="tns:RoadSnapping_RHttpPostIn" />
+      <wsdl:output message="tns:RoadSnapping_RHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="identSoap" type="tns:identSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SnapAdmin">
+      <soap:operation soapAction="http://tempuri.org/SnapAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <soap:operation soapAction="http://tempuri.org/SnapPublicArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <soap:operation soapAction="http://tempuri.org/SnapHydro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <soap:operation soapAction="http://tempuri.org/Search_SnapLtrans_KM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <soap:operation soapAction="http://tempuri.org/Search_SnapLtrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <soap:operation soapAction="http://tempuri.org/RoadSnapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <soap:operation soapAction="http://tempuri.org/RoadSnapping_R" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="identSoap12" type="tns:identSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SnapAdmin">
+      <soap12:operation soapAction="http://tempuri.org/SnapAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <soap12:operation soapAction="http://tempuri.org/SnapPublicArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <soap12:operation soapAction="http://tempuri.org/SnapHydro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <soap12:operation soapAction="http://tempuri.org/Search_SnapLtrans_KM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <soap12:operation soapAction="http://tempuri.org/Search_SnapLtrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <soap12:operation soapAction="http://tempuri.org/RoadSnapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <soap12:operation soapAction="http://tempuri.org/RoadSnapping_R" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="identHttpGet" type="tns:identHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SnapAdmin">
+      <http:operation location="/SnapAdmin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <http:operation location="/SnapPublicArea" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <http:operation location="/SnapHydro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <http:operation location="/Search_SnapLtrans_KM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <http:operation location="/Search_SnapLtrans" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <http:operation location="/RoadSnapping" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <http:operation location="/RoadSnapping_R" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="identHttpPost" type="tns:identHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SnapAdmin">
+      <http:operation location="/SnapAdmin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapPublicArea">
+      <http:operation location="/SnapPublicArea" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SnapHydro">
+      <http:operation location="/SnapHydro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans_KM">
+      <http:operation location="/Search_SnapLtrans_KM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_SnapLtrans">
+      <http:operation location="/Search_SnapLtrans" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping">
+      <http:operation location="/RoadSnapping" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoadSnapping_R">
+      <http:operation location="/RoadSnapping_R" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ident">
+    <wsdl:port name="identSoap" binding="tns:identSoap">
+      <soap:address location="http://search-test.nostramap.com/GeoCoding/MsGeoCoding.asmx" />
+    </wsdl:port>
+    <wsdl:port name="identSoap12" binding="tns:identSoap12">
+      <soap12:address location="http://search-test.nostramap.com/GeoCoding/MsGeoCoding.asmx" />
+    </wsdl:port>
+    <wsdl:port name="identHttpGet" binding="tns:identHttpGet">
+      <http:address location="http://search-test.nostramap.com/GeoCoding/MsGeoCoding.asmx" />
+    </wsdl:port>
+    <wsdl:port name="identHttpPost" binding="tns:identHttpPost">
+      <http:address location="http://search-test.nostramap.com/GeoCoding/MsGeoCoding.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

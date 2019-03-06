@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Do_WordsBK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BK_Str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Do_WordsBKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Do_WordsBKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Do_WordsBKSoapIn">
+    <wsdl:part name="parameters" element="tns:Do_WordsBK" />
+  </wsdl:message>
+  <wsdl:message name="Do_WordsBKSoapOut">
+    <wsdl:part name="parameters" element="tns:Do_WordsBKResponse" />
+  </wsdl:message>
+  <wsdl:message name="Do_WordsBKHttpGetIn">
+    <wsdl:part name="BK_Str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Do_WordsBKHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Do_WordsBKHttpPostIn">
+    <wsdl:part name="BK_Str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Do_WordsBKHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WB_ServiceSoap">
+    <wsdl:operation name="Do_WordsBK">
+      <wsdl:input message="tns:Do_WordsBKSoapIn" />
+      <wsdl:output message="tns:Do_WordsBKSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WB_ServiceHttpGet">
+    <wsdl:operation name="Do_WordsBK">
+      <wsdl:input message="tns:Do_WordsBKHttpGetIn" />
+      <wsdl:output message="tns:Do_WordsBKHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WB_ServiceHttpPost">
+    <wsdl:operation name="Do_WordsBK">
+      <wsdl:input message="tns:Do_WordsBKHttpPostIn" />
+      <wsdl:output message="tns:Do_WordsBKHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WB_ServiceSoap" type="tns:WB_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Do_WordsBK">
+      <soap:operation soapAction="http://tempuri.org/Do_WordsBK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WB_ServiceSoap12" type="tns:WB_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Do_WordsBK">
+      <soap12:operation soapAction="http://tempuri.org/Do_WordsBK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WB_ServiceHttpGet" type="tns:WB_ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Do_WordsBK">
+      <http:operation location="/Do_WordsBK" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WB_ServiceHttpPost" type="tns:WB_ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Do_WordsBK">
+      <http:operation location="/Do_WordsBK" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WB_Service">
+    <wsdl:port name="WB_ServiceSoap" binding="tns:WB_ServiceSoap">
+      <soap:address location="http://search2.nostramap.com/WB_WebService_GT/WB_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WB_ServiceSoap12" binding="tns:WB_ServiceSoap12">
+      <soap12:address location="http://search2.nostramap.com/WB_WebService_GT/WB_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WB_ServiceHttpGet" binding="tns:WB_ServiceHttpGet">
+      <http:address location="http://search2.nostramap.com/WB_WebService_GT/WB_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WB_ServiceHttpPost" binding="tns:WB_ServiceHttpPost">
+      <http:address location="http://search2.nostramap.com/WB_WebService_GT/WB_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

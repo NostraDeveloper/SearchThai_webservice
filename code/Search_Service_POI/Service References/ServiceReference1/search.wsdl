@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdminLevel3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdminLevel2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdminLevel1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdminLevel4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="radius" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RowsPerPage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutoComplete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numreturn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutoCompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutoCompleteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Identify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdentifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_Nearby">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="distance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numreturn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_NearbyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_NearbyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:AutoComplete" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:AutoCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdentifySoapIn">
+    <wsdl:part name="parameters" element="tns:Identify" />
+  </wsdl:message>
+  <wsdl:message name="IdentifySoapOut">
+    <wsdl:part name="parameters" element="tns:IdentifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbySoapIn">
+    <wsdl:part name="parameters" element="tns:Search_Nearby" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbySoapOut">
+    <wsdl:part name="parameters" element="tns:Search_NearbyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIP" />
+  </wsdl:message>
+  <wsdl:message name="GetIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetIn">
+    <wsdl:part name="keyword" type="s:string" />
+    <wsdl:part name="AdminLevel3" type="s:string" />
+    <wsdl:part name="AdminLevel2" type="s:string" />
+    <wsdl:part name="AdminLevel1" type="s:string" />
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="AdminLevel4" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="tag" type="s:string" />
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+    <wsdl:part name="RowsPerPage" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteHttpGetIn">
+    <wsdl:part name="keyword" type="s:string" />
+    <wsdl:part name="numreturn" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbyHttpGetIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="distance" type="s:string" />
+    <wsdl:part name="numreturn" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpGetIn" />
+  <wsdl:message name="GetIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostIn">
+    <wsdl:part name="keyword" type="s:string" />
+    <wsdl:part name="AdminLevel3" type="s:string" />
+    <wsdl:part name="AdminLevel2" type="s:string" />
+    <wsdl:part name="AdminLevel1" type="s:string" />
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="AdminLevel4" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="tag" type="s:string" />
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="radius" type="s:string" />
+    <wsdl:part name="RowsPerPage" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteHttpPostIn">
+    <wsdl:part name="keyword" type="s:string" />
+    <wsdl:part name="numreturn" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutoCompleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IdentifyHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbyHttpPostIn">
+    <wsdl:part name="lat" type="s:string" />
+    <wsdl:part name="lon" type="s:string" />
+    <wsdl:part name="distance" type="s:string" />
+    <wsdl:part name="numreturn" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Search_NearbyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpPostIn" />
+  <wsdl:message name="GetIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Search_LandmarkSoap">
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search_TH_Version3</wsdl:documentation>
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Auto Complete</wsdl:documentation>
+      <wsdl:input message="tns:AutoCompleteSoapIn" />
+      <wsdl:output message="tns:AutoCompleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Iden</wsdl:documentation>
+      <wsdl:input message="tns:IdentifySoapIn" />
+      <wsdl:output message="tns:IdentifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search Nearby</wsdl:documentation>
+      <wsdl:input message="tns:Search_NearbySoapIn" />
+      <wsdl:output message="tns:Search_NearbySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">IP</wsdl:documentation>
+      <wsdl:input message="tns:GetIPSoapIn" />
+      <wsdl:output message="tns:GetIPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Search_LandmarkHttpGet">
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search_TH_Version3</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpGetIn" />
+      <wsdl:output message="tns:SearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Auto Complete</wsdl:documentation>
+      <wsdl:input message="tns:AutoCompleteHttpGetIn" />
+      <wsdl:output message="tns:AutoCompleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Iden</wsdl:documentation>
+      <wsdl:input message="tns:IdentifyHttpGetIn" />
+      <wsdl:output message="tns:IdentifyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search Nearby</wsdl:documentation>
+      <wsdl:input message="tns:Search_NearbyHttpGetIn" />
+      <wsdl:output message="tns:Search_NearbyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">IP</wsdl:documentation>
+      <wsdl:input message="tns:GetIPHttpGetIn" />
+      <wsdl:output message="tns:GetIPHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Search_LandmarkHttpPost">
+    <wsdl:operation name="Search">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search_TH_Version3</wsdl:documentation>
+      <wsdl:input message="tns:SearchHttpPostIn" />
+      <wsdl:output message="tns:SearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Auto Complete</wsdl:documentation>
+      <wsdl:input message="tns:AutoCompleteHttpPostIn" />
+      <wsdl:output message="tns:AutoCompleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Iden</wsdl:documentation>
+      <wsdl:input message="tns:IdentifyHttpPostIn" />
+      <wsdl:output message="tns:IdentifyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Search Nearby</wsdl:documentation>
+      <wsdl:input message="tns:Search_NearbyHttpPostIn" />
+      <wsdl:output message="tns:Search_NearbyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">IP</wsdl:documentation>
+      <wsdl:input message="tns:GetIPHttpPostIn" />
+      <wsdl:output message="tns:GetIPHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Search_LandmarkSoap" type="tns:Search_LandmarkSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <soap:operation soapAction="http://tempuri.org/AutoComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <soap:operation soapAction="http://tempuri.org/Identify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <soap:operation soapAction="http://tempuri.org/Search_Nearby" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <soap:operation soapAction="http://tempuri.org/GetIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Search_LandmarkSoap12" type="tns:Search_LandmarkSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <soap12:operation soapAction="http://tempuri.org/AutoComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <soap12:operation soapAction="http://tempuri.org/Identify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <soap12:operation soapAction="http://tempuri.org/Search_Nearby" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <soap12:operation soapAction="http://tempuri.org/GetIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Search_LandmarkHttpGet" type="tns:Search_LandmarkHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <http:operation location="/AutoComplete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <http:operation location="/Identify" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <http:operation location="/Search_Nearby" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <http:operation location="/GetIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Search_LandmarkHttpPost" type="tns:Search_LandmarkHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Search">
+      <http:operation location="/Search" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoComplete">
+      <http:operation location="/AutoComplete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Identify">
+      <http:operation location="/Identify" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Nearby">
+      <http:operation location="/Search_Nearby" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <http:operation location="/GetIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Search_Landmark">
+    <wsdl:port name="Search_LandmarkSoap" binding="tns:Search_LandmarkSoap">
+      <soap:address location="http://search.nostramap.com/SearchIden_TH/search.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Search_LandmarkSoap12" binding="tns:Search_LandmarkSoap12">
+      <soap12:address location="http://search.nostramap.com/SearchIden_TH/search.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Search_LandmarkHttpGet" binding="tns:Search_LandmarkHttpGet">
+      <http:address location="http://search.nostramap.com/SearchIden_TH/search.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Search_LandmarkHttpPost" binding="tns:Search_LandmarkHttpPost">
+      <http:address location="http://search.nostramap.com/SearchIden_TH/search.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
